@@ -1,45 +1,36 @@
-import { Grid, Link, Typography } from "@mui/material";
-// import { Link } from "react-router-dom";
+import React from 'react'
+import { TopBarComponent } from './Components/top-bar'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Pages/Home'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
+import Signin from './Pages/Signin'
+import Signup from './Pages/Signup'
+import FooterComponent from './Components/footer'
+import { Grid } from '@mui/material'
 
-function App() {
+const App = () => {
   return (
     <>
-      <Grid
-        container
-        py={2}
-        px={2}
-        border={1}
-        borderColor={"lightgray"}
-        borderRadius={2}
-      >
-        <Grid item xs={1} spacing={3}>
-          <Link underline="none" href="/about">
-            <Typography variant="p">About</Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={1} spacing={3}>
-          <Link underline="none" href="/contact">
-            <Typography variant="p">Contact</Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={1} spacing={3}>
-          <Link underline="none" href="/signin">
-            <Typography variant="p">Sign In</Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={1} spacing={3}>
-          <Link underline="none" href="/signup">
-            <Typography variant="p">Sign Up</Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={1} spacing={3}>
-          <Link underline="none" href="/">
-            <Typography variant="p">Home</Typography>
-          </Link>
-        </Grid>
+      <Grid sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        justifyContent: "space-between",
+        margin: -1,
+      }}>
+        <TopBarComponent />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <FooterComponent />
       </Grid>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
