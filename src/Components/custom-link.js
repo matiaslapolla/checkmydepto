@@ -6,7 +6,8 @@ const CustomLink = (props) => {
       <Link underline="none" href={props?.linkPath}>
         <Typography sx={{
           "&:hover": {
-            color: "cadetblue",
+            color: "orange",
+            fontWeight: "400",
             cursor: "pointer",
             transition: "all 0.2s ease-in-out"
           }

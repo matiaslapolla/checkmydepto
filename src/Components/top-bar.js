@@ -9,7 +9,7 @@ export const TopBarComponent = () => {
       <Grid
         container
         py={2}
-        px={2}
+        px={8}
         justifyContent={"space-between"}
         alignItems={"center"}
         sx={{

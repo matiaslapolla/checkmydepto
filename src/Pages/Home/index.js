@@ -1,15 +1,18 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
+import HeroApartment from "../../Components/hero-apartment";
 
 const Home = () => {
   return <Grid sx={{
-    border: "1px solid black",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    height: "100vh",
+
   }}>
-    <Typography variant="h1">Home</Typography>
+    <Grid mt={0}>
+      <HeroApartment />
+
+    </Grid>
   </Grid>;
 };
 
