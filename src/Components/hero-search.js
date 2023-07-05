@@ -24,21 +24,19 @@ const HeroSearch = () => {
   return (
     <>
       <Grid sx={{
-        position: "absolute",
         zIndex: 5,
         width: "fit-content",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: 2,
-        backgroundColor: "white",
         borderRadius: 2,
-        gap: 2,
+        backgroundColor: "rgba(255,255,255,1)",
+        backdropFilter: "blur(2px)",
+        padding: 2,
         "&:hover": {
           transition: "all 0.2s ease-in-out",
         }
-
       }}>
         <Autocomplete
           options={locations}

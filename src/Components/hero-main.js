@@ -8,14 +8,22 @@ const HeroApartment = () => {
     <>
       <Grid height={500} sx={{
         display: "flex",
+        border: "1px solid black",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
+        backgroundImage: "url(/apartment_illustration.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        width: "100%",
+        filter: "brightness(0.97)",
+        gap: 4,
       }}>
         <HeroTextBanner />
         <HeroSearch />
-        <Grid sx={{
+        {/* <Grid sx={{
           backgroundImage: "url(/apartment_illustration.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -27,7 +35,7 @@ const HeroApartment = () => {
           height: "100%",
           zIndex: -1,
         }} >
-        </Grid>
+        </Grid> */}
       </Grid>
 
     </>
