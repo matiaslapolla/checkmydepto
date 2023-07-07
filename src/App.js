@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
-        <FooterComponent />
+        {/* <FooterComponent /> */}
       </Grid>
     </>
   )

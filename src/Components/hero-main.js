@@ -8,7 +8,6 @@ const HeroApartment = () => {
     <>
       <Grid height={500} sx={{
         display: "flex",
-        border: "1px solid black",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
