@@ -1,110 +1,170 @@
 import React from 'react'
-import compare_posts from '../Assets/compare_posts.png'
-import watch_comments from '../Assets/watch_comments.png'
+import comparePosts from '../Assets/compare-posts.png'
+import watchComments from '../Assets/watch-comments.png'
 import budget from '../Assets/budget.png'
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, useMediaQuery } from '@mui/material'
+// Compare deptos
+// Find your dream depto effortlessly with CheckMyDepto's intuitive platform. Easily compare prices, amenities, and locations, bringing you closer to the perfect abode that meets all your requirements.
 
 const SiteFeaturesSection = () => {
+
+  const isMobile = useMediaQuery('(max-width:600px)')
+  const isTablet = useMediaQuery('(max-width:960px)')
+  const isDesktop = useMediaQuery('(min-width:960px)')
+  const isLargeDesktop = useMediaQuery('(min-width:1280px)')
+  const isExtraLargeDesktop = useMediaQuery('(min-width:1920px)')
+  const is4k = useMediaQuery('(min-width:2560px)')
+  const is8k = useMediaQuery('(min-width:3840px)')
+
   return (
     <>
-      <Grid sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: 12,
-        padding: 4,
-        marginTop: 8
-      }}>
+      {
+        <p>
+          isMobile: {isMobile.toString()} <br />
+          isTablet: {isTablet.toString()} <br />
+          isDesktop: {isDesktop.toString()} <br />
+          isLargeDesktop: {isLargeDesktop.toString()} <br />
+          isExtraLargeDesktop: {isExtraLargeDesktop.toString()} <br />
+          is4k: {is4k.toString()} <br />
+          is8k: {is8k.toString()} <br />
+        </p>
 
-        <Grid container sx={{
+      }
+      <Grid
+        mt={8}
+        sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          gap: 2,
+          gap: 8,
+          padding: 4,
+          backgroundColor: "rgba(255,255,255,0.1)",
+          backdropFilter: "blur(2px)",
+          borderRadius: 2,
+        }}
+      >
+        <Grid container item xs={12} sx={{
+          display: "flex",
+          flexDirection: { xs: "column-reverse", md: "row" },
+          justifyContent: "center",
+          alignItems: "center",
+          gap: { xs: 4 },
+
         }}>
-          <Grid item xs={12} md={5} sx={{
+          <Grid item xs={12} md={4} sx={{
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+            justifyContent: "flex-end",
+
+            paddingX: 8,
           }}>
-            <img src={compare_posts} alt={"compare posts"} width={424} />
+            <img src={comparePosts} alt={"compare posts"} width={300} />
           </Grid>
-          <Grid item xs={12} md={5} sx={{
+          <Grid item xs={12} md={4} sx={{
             display: "flex",
             flexDirection: "column",
-            gap: 4,
-            padding: 4,
+            alignItems: "flex-start",
+            gap: 2,
+
+            paddingX: 8,
           }}
           >
-            <Typography variant="h4" component="h4">
-              Compare apartments
-            </Typography>
-            <Typography variant="body1">
-              Find your ideal home effortlessly. Compare prices, amenities, and locations with RentCompare's intuitive platform. Say goodbye to endless scrolling and hello to your dream apartment!
-            </Typography>
+            <Grid sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}>
+              <Typography variant="h4" component="h4" fontWeight={"bold"}>
+                Compare deptos
+              </Typography>
+              <Typography variant="body1" component="p" width={"35ch"}>
+                Find your dream depto effortlessly with CheckMyDepto's intuitive platform. Easily compare prices, amenities, and locations, bringing you closer to the perfect abode that meets all your requirements.
+              </Typography>
+            </Grid>
+          </Grid>
+
+        </Grid>
+
+        <Grid container item xs={12} sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: 4 },
+          justifyContent: "center",
+          alignItems: "center",
+
+        }}>
+          <Grid item xs={12} md={4} sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: 2,
+            paddingX: 8,
+          }}
+          >
+            <Grid sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}>
+              <Typography variant="h4" component="h4" fontWeight={"bold"}>
+                View verified reviews
+              </Typography>
+              <Typography variant="body1" component="p" width={"35ch"}>
+                When it comes to finding your next home, transparency is key. Dive into genuine reviews on CheckMyDepto and get the inside scoop to make a smart choice for your dream depto.
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={4} sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+
+            paddingX: 8,
+          }}>
+            <img src={watchComments} alt={"compare posts"} width={300} />
           </Grid>
         </Grid>
 
-        <Grid container sx={{
+        <Grid container item xs={12} sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: { xs: "column-reverse", md: "row" },
+          gap: { xs: 4 },
           justifyContent: "center",
           alignItems: "center",
-          gap: 2,
+
         }}>
-          <Grid item xs={12} md={5} sx={{
+          <Grid item xs={12} md={4} sx={{
             display: "flex",
-            flexDirection: "column",
-            gap: 4,
-            padding: 4,
+            justifyContent: "flex-end",
+
+            paddingX: 8
+          }}>
+            <img src={budget} alt={"compare posts"} width={300} />
+          </Grid>
+
+          <Grid item xs={12} md={4} sx={{
+            display: "flex",
+            alignItems: "flex-start",
+
+            paddingX: 8,
           }}
           >
-            <Typography variant="h4" component="h4">
-              View Verified Reviews
-            </Typography>
-            <Typography variant="body1">
-              Transparency matters. Explore real tenant reviews on RentCompare. Get valuable insights to make an informed choice for your next home.
-            </Typography>
+            <Grid sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}>
+              <Typography sx={{
+              }} variant="h4" component="h4" fontWeight={"bold"}>
+                Fit your budget!
+              </Typography>
+              <Typography sx={{
+              }} variant="body1" component="p" width={"35ch"}>
+                Don't compromise on your budget. Match with apartments that fit your financial goals. Discover your ideal space today!
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={5} sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}>
-            <img src={watch_comments} alt={"compare posts"} width={424} />
-          </Grid>
-        </Grid>
 
-        <Grid container sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 2,
-        }}>
-          <Grid item xs={12} md={5} sx={{
-            display: "flex",
-          }}>
-            <img src={budget} alt={"compare posts"} width={424} />
-          </Grid>
-          <Grid item xs={12} md={5} sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 4,
-            padding: 4,
-          }}
-          >
-            <Typography variant="h4" component="h4">
-              Fit your budget!
-            </Typography>
-            <Typography variant="body1">
-              Don't compromise on your budget. Match with apartments that fit your financial goals. Discover your ideal space today!
-            </Typography>
-          </Grid>
         </Grid>
-
       </Grid>
     </>
   )

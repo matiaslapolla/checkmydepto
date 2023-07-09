@@ -1,7 +1,10 @@
+import logo from "../Assets/logo.png";
+
 export const TopBarRoutes = [
   {
     linkPath: "/",
-    linkTitle: "Home"
+    linkTitle: "Home",
+    logoImage: logo
   },
   {
     linkPath: "/contact",

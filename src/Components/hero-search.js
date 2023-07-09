@@ -1,4 +1,4 @@
-import { Autocomplete, Grid, TextField, Typography } from '@mui/material'
+import { Autocomplete, Button, Grid, TextField, Typography } from '@mui/material'
 import React from 'react'
 
 const HeroSearch = () => {
@@ -27,13 +27,14 @@ const HeroSearch = () => {
         zIndex: 5,
         width: "fit-content",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 2,
         backgroundColor: "rgba(255,255,255,1)",
         backdropFilter: "blur(2px)",
         padding: 2,
+        gap: 2,
         "&:hover": {
           transition: "all 0.2s ease-in-out",
         }
@@ -54,7 +55,7 @@ const HeroSearch = () => {
               borderColor: "orange",
             },
             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "orange",
+              borderColor: "green",
             },
             "& .MuiOutlinedInput-input": {
               color: "orange",
@@ -66,18 +67,39 @@ const HeroSearch = () => {
               color: "orange",
             },
             "&:hover .MuiInputLabel-outlined": {
-              color: "orange",
+              color: "green",
             },
             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input": {
-              color: "orange",
+              color: "green",
             },
             "& .MuiInputLabel-outlined.Mui-focused": {
-              color: "orange",
+              color: "green",
             },
+            "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+              borderColor: "green",
+            },
+
 
           }}
           renderInput={(params) => <TextField {...params} label="Type in a city..." />}
         />
+        <Button
+          variant="contained"
+          size='large'
+          sx={{
+            backgroundColor: "orange",
+            textTransform: "none",
+            color: "white",
+            "&:hover": {
+              backgroundColor: "green",
+              px: 4,
+              color: "white",
+              transition: "all 0.5s ease-in-out",
+            }
+          }}
+        >
+          Find Deptos
+        </Button>
       </Grid>
     </>
   )

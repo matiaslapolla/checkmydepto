@@ -5,17 +5,16 @@ const HeroTextBanner = () => {
   return (
     <>
       <Grid sx={{
-        zIndex: 4,
-        backgroundColor: "rgba(255,255,255,0.66)",
+        gap: 2,
+        color: "white",
+        padding: 2,
+        zIndex: 122,
         width: "100%",
         minHeight: 170,
-        backdropFilter: "blur(2px)",
-        textAlign: "center",
         display: "flex",
+        textAlign: "center",
         flexDirection: "column",
         justifyContent: "center",
-        padding: 2,
-        gap: 2,
       }}>
         <Grid container gap={1} sx={{
           display: "flex",

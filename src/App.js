@@ -12,11 +12,8 @@ import { Grid } from '@mui/material'
 const App = () => {
   return (
     <>
+
       <Grid sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-        justifyContent: "space-between",
         margin: -1,
       }}>
         <TopBarComponent />
@@ -27,7 +24,7 @@ const App = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
-        {/* <FooterComponent /> */}
+        <FooterComponent />
       </Grid>
     </>
   )
