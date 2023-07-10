@@ -18,7 +18,7 @@ const SiteFeaturesSection = () => {
 
   return (
     <>
-      {
+      {/* {
         <p>
           isMobile: {isMobile.toString()} <br />
           isTablet: {isTablet.toString()} <br />
@@ -28,8 +28,7 @@ const SiteFeaturesSection = () => {
           is4k: {is4k.toString()} <br />
           is8k: {is8k.toString()} <br />
         </p>
-
-      }
+      } */}
       <Grid
         mt={8}
         sx={{

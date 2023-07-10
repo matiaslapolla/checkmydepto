@@ -31,6 +31,7 @@ export const TopBarComponent = () => {
             justifyContent={"space-between"}
             alignItems={"center"}
             sx={{
+              top: 0,
               position: "fixed",
               backgroundColor: "white",
               zIndex: 1000,
