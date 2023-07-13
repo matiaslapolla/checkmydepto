@@ -46,7 +46,7 @@ export const TopBarComponent = () => {
             open={sidebarOpen}
             sx={{
               "& .MuiDrawer-paper": {
-                width: "33%",
+                width: "40%",
                 backgroundColor: "white",
                 color: "black",
                 display: "flex",
