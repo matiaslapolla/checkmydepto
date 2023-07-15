@@ -51,7 +51,7 @@ const HeroSearch = () => {
           getOptionLabel={(option) => option.title}
           sx={{
             width: 300, backgroundColor: "white",
-            "&& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+            "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
               borderColor: "orange",
             },
             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {

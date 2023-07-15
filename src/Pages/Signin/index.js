@@ -14,6 +14,8 @@ const Signin = () => {
     passwordError: false,
   })
 
+  const hasError = formData.emailError || formData.passwordError
+
   const validateEmail = (email) => {
     let isValid = true
     if (email === '') {
@@ -91,8 +93,7 @@ const Signin = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
-        border: '1px solid black',
+        minHeight: '100vh',
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -105,6 +106,7 @@ const Signin = () => {
             justifyContent: 'center',
             alignItems: 'center',
             padding: '2rem',
+            mt: '8rem',
             backgroundColor: 'white',
             borderRadius: '1rem',
           }}>
@@ -144,6 +146,11 @@ const Signin = () => {
                   autoComplete="password"
                   error={formData.passwordError}
                 />
+                {hasError &&
+                  <Typography variant="body2" color={"red"} mt={2} maxWidth={"24ch"}>
+                    Please enter a valid email and password.
+                  </Typography>
+                }
                 <Typography variant="body2" gutterBottom mt={2} maxWidth={"24ch"}>
                   Password must be 8-16 characters long, contain at least one uppercase letter, one lowercase letter, and one number.
                 </Typography>
@@ -174,25 +181,10 @@ const Signin = () => {
             marginTop: '1rem',
           }}>
             <Typography variant="body1">
-              Don't have an account? <a style={{ textDecoration: "none" }} href="/signup">Sign Up</a>
+              Don't have an account? <a style={{ textDecoration: "none", fontWeight: "bold" }} href="/signup">Sign Up</a>
             </Typography>
           </Grid>
 
-          {
-            <Grid sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: '2rem',
-              backgroundColor: 'white',
-              borderRadius: '1rem',
-              marginTop: '1rem',
-            }}>
-              <Typography variant="body1">
-                Please fill out all fields
-              </Typography>
-            </Grid>
-          }
         </form>
       </Grid>
     </>

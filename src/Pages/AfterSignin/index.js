@@ -23,9 +23,12 @@ const AfterSignin = () => {
           backdropFilter: 'blur(5px)',
           backgroundColor: 'rgba(255, 255, 255, 0.5)',
           padding: '2rem',
+          borderRadius: '1rem',
         }} >
           <Typography
-            variant="h2"
+            display="flex"
+            justifyContent="center"
+            variant={"h2"}
             gutterBottom
             fontWeight={"bold"}
             color={"black"}
@@ -38,6 +41,7 @@ const AfterSignin = () => {
             gutterBottom
             fontWeight={"bold"}
             color={"black"}
+            maxWidth={"75ch"}
           >
             If you can see this, it means you have successfully signed in. Congratulations!
             As this project does not use a backend, this is just a dummy page.
