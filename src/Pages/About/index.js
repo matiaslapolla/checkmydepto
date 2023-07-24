@@ -20,6 +20,7 @@ const About = () => {
           backgroundSize: "cover",
           backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
+          minHeight: "100vh",
         }}
       >
         <Grid mt={12} container justifyContent={{
