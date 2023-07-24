@@ -1,6 +1,5 @@
-import { Button, Grid, TextField, TextareaAutosize, Typography } from '@mui/material'
-import React from 'react'
-import contactImage from '../../Assets/contact_image.jpg'
+import { Button, Grid, TextField, Typography } from '@mui/material'
+import React, { useState } from 'react'
 
 const textStyleObject = {
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
@@ -32,7 +31,29 @@ const textStyleObject = {
   },
 }
 
+
 const Contact = () => {
+
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert("Message Sent")
+  }
+
+  const handleChange = (e) => {
+    setContactForm({
+      ...contactForm,
+      [e.target.name]: e.target.value
+    })
+  }
+
+
   return (
     <Grid
       container
@@ -45,29 +66,33 @@ const Contact = () => {
       }}
     >
       <Grid item>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Typography variant="h4" sx={{ color: 'black' }} gutterBottom>
             Contact Us
           </Typography>
           <Typography variant="h6" sx={{ color: '#black' }} gutterBottom>
             We are here to help and answer any question you might have. We look forward to hearing from you.
           </Typography>
-          <Grid container spacing={2}>
-            <Grid container p={1} xs={6} flexDirection={"column"}>
+          <Grid container spacing={2} flexDirection={{
+            xs: "column",
+            sm: "column",
+            md: "row",
+          }}>
+            <Grid container p={1} xs={12} sm={12} md={6} flexDirection={"column"}>
               <Grid item p={1}>
-                <TextField fullWidth placeholder="Name" sx={textStyleObject} />
+                <TextField name="name" onChange={handleChange} fullWidth placeholder="Name" sx={textStyleObject} />
               </Grid>
               <Grid item p={1}>
-                <TextField fullWidth placeholder="Email" sx={textStyleObject} />
+                <TextField name="email" onChange={handleChange} required fullWidth placeholder="Email" sx={textStyleObject} />
               </Grid>
               <Grid item p={1}>
-                <TextField fullWidth placeholder="Subject" sx={textStyleObject} />
+                <TextField name="subject" onChange={handleChange} fullWidth placeholder="Subject" sx={textStyleObject} />
               </Grid>
             </Grid>
 
-            <Grid container p={1} xs={6} justifyContent={"center"}>
+            <Grid container p={1} xs={12} sm={12} md={6} justifyContent={"center"}>
               <Grid item xs={12} p={1}>
-                <TextField fullWidth placeholder="Message" multiline rows={4} sx={textStyleObject} />
+                <TextField name="message" onChange={handleChange} fullWidth required placeholder="Message" multiline rows={4} sx={textStyleObject} />
               </Grid>
               <Grid container justifyContent={"center"} p={2}>
                 <Button variant='contained' sx={{
