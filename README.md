@@ -1,14 +1,12 @@
 # CheckMyDepto
 
-Welcome to the CheckMyDepto project! This project is a website designed to help users find apartments (referred to as "deptos" in the website). It provides various features such as authentication, data handling with CRUD capabilities, and a responsive user interface.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the CheckMyDepto project! This project is a website designed to help users find apartments (referred to as "deptos" in the website). 
 
 ## Technologies Used
 
 This project utilizes the following technologies:
 
-### ReactJS
+### ReactJS with React Router DOM
 
 ReactJS is a JavaScript library for building user interfaces. It allows for the creation of reusable UI components and provides a declarative approach to building interactive UIs.
 
