@@ -27,7 +27,7 @@ const HeroSearch = () => {
         zIndex: 5,
         width: "fit-content",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 2,

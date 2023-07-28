@@ -14,7 +14,6 @@ const HeroApartment = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        width: "100%",
         backgroundImage: "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(/apartment_illustration.jpg)",
         gap: 4,
         marginTop: 8,

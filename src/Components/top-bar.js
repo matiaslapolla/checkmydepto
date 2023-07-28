@@ -30,6 +30,7 @@ export const TopBarComponent = () => {
             p={2}
             justifyContent={"space-between"}
             alignItems={"center"}
+
             sx={{
               top: 0,
               position: "fixed",
@@ -46,8 +47,9 @@ export const TopBarComponent = () => {
             open={sidebarOpen}
             sx={{
               "& .MuiDrawer-paper": {
-                width: "40%",
-                backgroundColor: "white",
+                width: "60%",
+                backgroundColor: "rgba(255,255,255,0.6)",
+                backdropFilter: "blur(8px)",
                 color: "black",
                 display: "flex",
                 flexDirection: "column",
