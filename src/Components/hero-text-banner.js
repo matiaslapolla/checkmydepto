@@ -23,10 +23,10 @@ const HeroTextBanner = () => {
         }}>
           <Grid item>
 
-            <Typography xs={3} variant="h3" fontWeight={"bold"}>Welcome to</Typography>
+            <Typography xs={3} variant="h3" fontWeight={"bold"}>No alquiles en </Typography>
           </Grid>
           <Grid item>
-            <Typography xs={6} fontWeight={"bold"} variant={"h3"} sx={{ "&:hover": { color: "orange", transition: "all 0.2s ease-in-out" } }}>CheckMyDepto</Typography>
+            <Typography xs={6} fontWeight={"bold"} variant={"h3"} sx={{ "&:hover": { color: "blue", transition: "all 0.2s ease-in-out" } }}>Casas Tandil</Typography>
           </Grid>
         </Grid>
         <Grid sx={{
