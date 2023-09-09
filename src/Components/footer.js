@@ -9,10 +9,7 @@ const FooterComponent = () => {
         fontWeight: "normal",
         fontFamily: "Roboto",
         color: "grey",
-        "&:hover": {
-          color: "darkblue",
-          transition: "all 0.5s ease",
-        }
+        borderTop: "1px solid lightgrey",
       }} minHeight={64} justifyContent={"center"}>
         <Link
           sx={{
@@ -20,7 +17,8 @@ const FooterComponent = () => {
             textDecoration: "none",
             fontWeight: "bold",
             "&:hover": {
-              color: "#3f51b5",
+              color: "darkblue",
+              transition: "all 0.3s ease-in-out",
             }
           }
           }

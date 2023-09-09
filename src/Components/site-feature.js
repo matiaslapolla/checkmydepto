@@ -44,7 +44,7 @@ const SiteFeature = ({
           flexDirection: "column",
           gap: 2,
         }}>
-          <Typography variant="h4" component="h4" fontWeight={"bold"}>
+          <Typography variant="h4" component="h4" fontWeight={"bold"} sx={{ "&:hover": { color: "orange", transition: "all 0.2s ease-in-out" } }}>
             {title}
           </Typography>
           <Typography variant="body1" component="p" width={"35ch"}>

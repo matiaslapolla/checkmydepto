@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
 import HeroTextBanner from './hero-text-banner'
-import HeroSearch from './hero-search'
 
 const HeroApartment = () => {
   return (
@@ -20,7 +19,6 @@ const HeroApartment = () => {
         zindex: 1,
       }}>
         <HeroTextBanner />
-        <HeroSearch />
       </Grid>
 
     </>
