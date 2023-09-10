@@ -1,164 +1,12 @@
 import { ChevronRight, Person, PhoneAndroid } from '@mui/icons-material';
-import { Button, Divider, Grid, TextField, Typography } from '@mui/material';
+import { Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useState } from 'react';
-import { Router, useNavigate } from 'react-router-dom';
-
-const textStyleObject = {
-	'& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-		borderColor: 'orange',
-	},
-	'& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-		borderColor: 'darkOrange',
-	},
-	'& .MuiOutlinedInput-input': {
-		color: 'black',
-	},
-	'& .MuiInputLabel-outlined': {
-		color: 'black',
-	},
-	'&:hover .MuiOutlinedInput-input': {
-		color: 'black',
-	},
-	'&:hover .MuiInputLabel-outlined': {
-		color: 'black',
-	},
-	'& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input': {
-		color: 'black',
-	},
-	'& .MuiInputLabel-outlined.Mui-focused': {
-		color: 'black',
-	},
-	'&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-		borderColor: 'darkOrange',
-	},
-};
-
-const MailStep = ({ advanceStep }) => {
-	return (
-		<Grid
-			gap={2}
-			container
-			border={'1px solid lightgray'}
-			padding={8}
-			maxWidth={'60%'}
-			borderRadius={'8px'}
-			flexDirection={'column'}>
-			<Grid width={'100%'}>
-				<TextField
-					fullWidth
-					variant={'outlined'}
-					label={'Email, phone, or username'}
-					placeholder={'Email, phone, or username'}
-					sx={textStyleObject}
-				/>
-			</Grid>
-			<Grid
-				container
-				gap={2}>
-				<Grid item>
-					<Button
-						onClick={advanceStep}
-						variant={'contained'}
-						sx={{
-							backgroundColor: 'orange',
-							'&:hover': {
-								backgroundColor: 'darkOrange',
-							},
-						}}>
-						Continue
-					</Button>
-				</Grid>
-				<Grid item>
-					<Button
-						variant={'outlined'}
-						sx={{
-							'&:hover': {
-								borderColor: 'green',
-								color: 'white',
-								backgroundColor: 'darkGreen',
-							},
-							borderColor: 'darkGreen',
-							color: 'darkGreen',
-						}}>
-						Create account
-					</Button>
-				</Grid>
-			</Grid>
-		</Grid>
-	);
-};
-
-const PasswordStep = ({ advanceStep }) => {
-	return (
-		<Grid
-			gap={2}
-			container
-			border={'1px solid lightgray'}
-			padding={8}
-			maxWidth={'60%'}
-			borderRadius={'8px'}
-			flexDirection={'column'}>
-			<Grid width={'100%'}>
-				<TextField
-					fullWidth
-					type='password'
-					variant={'outlined'}
-					label={'Password'}
-					placeholder={'Password'}
-					sx={textStyleObject}
-				/>
-			</Grid>
-			<Grid
-				container
-				gap={2}>
-				<Grid item>
-					<Button
-						onClick={advanceStep}
-						variant={'contained'}
-						sx={{
-							backgroundColor: 'orange',
-							'&:hover': {
-								backgroundColor: 'darkOrange',
-							},
-						}}>
-						Submit
-					</Button>
-				</Grid>
-			</Grid>
-		</Grid>
-	);
-};
-
-const FinalStep = ({ advanceStep }) => {
-	return (
-		<Grid
-			gap={2}
-			container
-			border={'1px solid lightgray'}
-			padding={8}
-			maxWidth={'60%'}
-			borderRadius={'8px'}
-			flexDirection={'column'}>
-			<Grid
-				container
-				gap={2}>
-				<Grid item>
-					<Button
-						onClick={advanceStep}
-						variant={'contained'}
-						sx={{
-							backgroundColor: 'orange',
-							'&:hover': {
-								backgroundColor: 'darkOrange',
-							},
-						}}>
-						Enter your account
-					</Button>
-				</Grid>
-			</Grid>
-		</Grid>
-	);
-};
+import { useNavigate } from 'react-router-dom';
+import {
+	FinalStep,
+	MailStep,
+	PasswordStep,
+} from '../../Components/signin-steps';
 
 const Signin = () => {
 	const [currentStep, setCurrentStep] = useState(0);
@@ -192,13 +40,13 @@ const Signin = () => {
 							md: 'row',
 						}}
 						maxWidth={'1080px'}
-						justifyContent={'center'}
+						justifyContent={'space-between'}
 						alignItems={'center'}>
 						<Grid
 							container
 							maxWidth={{
 								xs: '100%',
-								sm: '100%',
+								sm: '80%',
 								md: '40%',
 							}}
 							flexDirection={'column'}
@@ -207,7 +55,7 @@ const Signin = () => {
 							<Grid
 								gap={2}
 								container
-								width={'80%'}
+								width={'100%'}
 								padding={4}
 								flexDirection={'column'}>
 								<Grid justifyContent={'flex-start'}>
