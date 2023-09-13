@@ -36,7 +36,11 @@ const HeroTextBanner = () => {
 							xs={3}
 							color={'white'}
 							letterSpacing={1.5}
-							variant='h2'
+							fontSize={{
+								xs: '3rem',
+								sm: '3rem',
+								md: '3rem',
+							}}
 							fontWeight={'bold'}>
 							Welcome to{' '}
 						</Typography>
@@ -46,7 +50,11 @@ const HeroTextBanner = () => {
 							color={'white'}
 							letterSpacing={1.5}
 							fontWeight={900}
-							variant={'h2'}
+							fontSize={{
+								xs: '3rem',
+								sm: '3rem',
+								md: '3rem',
+							}}
 							sx={{
 								'&:hover': {
 									color: 'orange',
@@ -67,8 +75,9 @@ const HeroTextBanner = () => {
 					<Typography
 						color={'white'}
 						maxWidth={{
-							xs: '40ch',
-							sm: '75ch',
+							xs: '30ch',
+							sm: '40ch',
+							md: '70ch',
 						}}
 						variant='h6'>
 						Apartment reviews, personal recommendations, real photos
@@ -76,6 +85,10 @@ const HeroTextBanner = () => {
 					</Typography>
 					<Typography
 						variant='h6'
+						maxWidth={{
+							xs: '25ch',
+							sm: '40ch',
+						}}
 						color={'white'}>
 						Your #1 resource for apartment reviews
 					</Typography>

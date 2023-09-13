@@ -15,7 +15,7 @@ const SiteFeaturesSection = () => {
 					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
-					gap: 16,
+					gap: 8,
 					padding: 4,
 				}}>
 				<SiteFeature

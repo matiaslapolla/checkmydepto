@@ -18,7 +18,7 @@ const SiteFeature = ({
 				xs: reverseMobile === true ? 'column-reverse' : 'column',
 				md: reverse === true ? 'row-reverse' : 'row',
 			}}
-			gap={{ xs: 24 }}
+			gap={{ xs: 12, md: 24 }}
 			sx={{
 				display: 'flex',
 				justifyContent: 'center',
