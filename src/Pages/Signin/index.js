@@ -1,195 +1,182 @@
-import { Button, Grid, TextField, Typography } from '@mui/material'
-import background from '../../Assets/apartment_illustration_2.jpg'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { ChevronRight, Person, PhoneAndroid } from '@mui/icons-material';
+import { Divider, Grid, Typography } from '@mui/material';
+import React, { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {
+	FinalStep,
+	MailStep,
+	PasswordStep,
+} from '../../Components/signin-steps';
 
 const Signin = () => {
+	const [currentStep, setCurrentStep] = useState(0);
 
-  const navigate = useNavigate()
+	const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    emailError: false,
-    passwordError: false,
-  })
+	const handleStep = useCallback(() => {
+		setCurrentStep(currentStep + 1);
+	}, [currentStep]);
 
-  const hasError = formData.emailError || formData.passwordError
+	const resetStep = useCallback(() => {
+		setCurrentStep(0);
+		navigate('/');
+	}, [currentStep]);
 
-  const validateEmail = (email) => {
-    let isValid = true
-    if (email === '') {
-      isValid = false
-    } else {
-      const re = /\S+@\S+\.\S+/
-      isValid = re.test(email)
-    }
-    return isValid
-  }
+	return (
+		<>
+			<Grid
+				container
+				minHeight={'95vh'}>
+				<Grid
+					container
+					flexDirection={'column'}
+					alignItems={'center'}>
+					<Grid
+						mt={'8rem'}
+						container
+						flexDirection={{
+							xs: 'column',
+							sm: 'column',
+							md: 'row',
+						}}
+						maxWidth={'1080px'}
+						justifyContent={'space-between'}
+						alignItems={'center'}>
+						<Grid
+							container
+							maxWidth={{
+								xs: '100%',
+								sm: '80%',
+								md: '40%',
+							}}
+							flexDirection={'column'}
+							alignItems={'center'}
+							justifyContent={'center'}>
+							<Grid
+								gap={2}
+								container
+								width={'100%'}
+								padding={4}
+								flexDirection={'column'}>
+								<Grid justifyContent={'flex-start'}>
+									<Typography
+										variant={'h5'}
+										letterSpacing={0.35}
+										lineHeight={1.5}>
+										Enter your e-mail, phone, or username
+									</Typography>
+								</Grid>
+								<Grid width={'100%'}>
+									<Divider />
+								</Grid>
+								<Grid
+									container
+									gap={2}>
+									<Typography
+										variant={'body2'}
+										fontSize={'1.1rem'}
+										fontWeight={'500'}
+										letterSpacing={0.75}
+										sx={{
+											'&:hover': {
+												cursor: 'pointer',
+												textDecoration: 'underline',
+												transition:
+													'all 0.3s ease-in-out',
+											},
+										}}>
+										Report a problem
+									</Typography>
+									<Grid
+										gap={1}
+										container
+										flexDirection={'column'}>
+										<Grid
+											sx={{
+												'&:hover': {
+													cursor: 'pointer',
+													backgroundColor: '#dedede',
+													transition:
+														'all 0.3s ease-in-out',
+												},
+											}}
+											borderRadius={'8px'}
+											width={'100%'}
+											backgroundColor={'#f1f3f4'}
+											gap={2}
+											container
+											padding={1}
+											justifyContent={'space-between'}
+											alignItems={'center'}>
+											<PhoneAndroid />
+											<Typography variant={'body1'}>
+												Phone lost or stolen?
+											</Typography>
+											<ChevronRight />
+										</Grid>
+										<Grid
+											sx={{
+												'&:hover': {
+													cursor: 'pointer',
+													backgroundColor: '#dedede',
+													transition:
+														'all 0.3s ease-in-out',
+												},
+											}}
+											width={'100%'}
+											borderRadius={'8px'}
+											backgroundColor={'#f1f3f4'}
+											gap={2}
+											container
+											padding={1}
+											justifyContent={'space-between'}
+											alignItems={'center'}>
+											<Person />
+											<Typography variant={'body1'}>
+												Account recovery
+											</Typography>
+											<ChevronRight />
+										</Grid>
+									</Grid>
+								</Grid>
+								<Grid>
+									<Typography
+										sx={{ display: 'flex', gap: '0.5rem' }}
+										variant={'body2'}
+										fontSize={'1rem'}>
+										Don't have an account?
+										<Typography
+											color={'#0000f9'}
+											variant={'body2'}
+											fontSize={'1rem'}
+											sx={{
+												'&:hover': {
+													cursor: 'pointer',
+													color: 'orange',
+													transition:
+														'all 0.3s ease-in-out',
+												},
+											}}>
+											Sign up
+										</Typography>
+									</Typography>
+								</Grid>
+							</Grid>
+						</Grid>
+						{currentStep === 0 && (
+							<MailStep advanceStep={handleStep} />
+						)}
+						{currentStep === 1 && (
+							<PasswordStep advanceStep={handleStep} />
+						)}
+						{currentStep === 2 && (
+							<FinalStep advanceStep={resetStep} />
+						)}
+					</Grid>
+				</Grid>
+			</Grid>
+		</>
+	);
+};
 
-  const validatePassword = (password) => {
-    let isValid = true
-    if (password === '') {
-      isValid = false
-    }
-
-    if (password.length < 8 || password.length > 16) {
-      isValid = false
-    }
-
-    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-
-    isValid = re.test(password)
-
-    return isValid
-  }
-
-  const verifyFields = () => {
-    let emailError = false
-    let passwordError = false
-
-    if (!validateEmail(formData.email)) {
-      emailError = true
-    }
-
-    if (!validatePassword(formData.password)) {
-      passwordError = true
-    }
-
-    setFormData({
-      ...formData,
-      emailError,
-      passwordError,
-    })
-
-    if (emailError || passwordError) {
-      return false
-    }
-
-    return true
-  }
-
-  const handleFormChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const isFormValid = verifyFields()
-    console.log(formData)
-    if (isFormValid) {
-      navigate('/aftersignin')
-    } else {
-      console.log('form is invalid')
-    }
-  }
-
-  return (
-    <>
-      <Grid sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}>
-        <form onSubmit={handleSubmit}>
-          <Grid sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '2rem',
-            mt: '8rem',
-            backgroundColor: 'white',
-            borderRadius: '1rem',
-          }}>
-            <Typography variant="h6" gutterBottom fontWeight={"bold"}>
-              Sign In
-            </Typography>
-            <Grid
-              container
-              spacing={3}
-              flexDirection={"column"}
-              alignItems={"center"}
-            >
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  value={formData.email}
-                  onChange={handleFormChange}
-                  id="email"
-                  name="email"
-                  label="Email"
-                  type="email"
-                  fullWidth
-                  autoComplete="email"
-                  error={formData.emailError}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  value={formData.password}
-                  onChange={handleFormChange}
-                  id="password"
-                  name="password"
-                  label="Password"
-                  type="password"
-                  fullWidth
-                  autoComplete="password"
-                  error={formData.passwordError}
-                />
-                {hasError &&
-                  <Typography variant="body2" color={"red"} mt={2} maxWidth={"24ch"}>
-                    Please enter a valid email and password.
-                  </Typography>
-                }
-                <Typography variant="body2" gutterBottom mt={2} maxWidth={"24ch"}>
-                  Password must be 8-16 characters long, contain at least one uppercase letter, one lowercase letter, and one number.
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    backgroundColor: 'orange',
-                    "&:hover": {
-                      backgroundColor: 'green',
-                    },
-                  }}
-                >
-                  Sign In
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '2rem',
-            backgroundColor: 'white',
-            borderRadius: '1rem',
-            marginTop: '1rem',
-          }}>
-            <Typography variant="body1">
-              Don't have an account? <a style={{ textDecoration: "none", fontWeight: "bold" }} href="/signup">Sign Up</a>
-            </Typography>
-          </Grid>
-
-        </form>
-      </Grid>
-    </>
-
-  )
-}
-
-export default Signin
+export default Signin;
