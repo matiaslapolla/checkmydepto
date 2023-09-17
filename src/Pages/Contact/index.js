@@ -71,9 +71,9 @@ const Contact = () => {
 				alignItems={'center'}
 				justifyContent={'center'}
 				sx={{
+					maxWidth: '1600px',
 					backdropFilter: 'blur(16px)',
 					minHeight: '100vh',
-					minWidth: '100vw',
 					backgroundColor: '#FFFFFF75',
 				}}>
 				<Grid
@@ -110,8 +110,10 @@ const Contact = () => {
 							sx={{ color: 'black' }}
 							letterSpacing={0.5}
 							gutterBottom>
-							We are here to help and answer any question you
-							might have. We look forward to hearing from you.
+							We are here to help and answer any questions you
+							might have. Our team of experts is ready to assist
+							you with any technical inquiries or challenges you
+							may encounter
 						</Typography>
 						<Typography
 							variant='body2'
@@ -119,8 +121,12 @@ const Contact = () => {
 							sx={{ color: 'black' }}
 							letterSpacing={0.5}
 							gutterBottom>
-							If you are a business owner and would like to be
-							featured on our website, please contact us as well.
+							As a business owner, you have the opportunity to
+							showcase your company on our website, gaining
+							exposure to a wide audience of potential customers
+							and partners. Feel free to contact us if you're
+							interested or have any questions. We're eager to
+							hear from you and assist in achieving your goals.
 						</Typography>
 					</Grid>
 					<Grid

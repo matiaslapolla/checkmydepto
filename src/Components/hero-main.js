@@ -7,7 +7,7 @@ const HeroApartment = () => {
 		<>
 			<Grid
 				height={'350px'}
-				width={'1280px'}
+				width={'1440px'}
 				sx={{
 					display: 'flex',
 					alignSelf: 'center',
