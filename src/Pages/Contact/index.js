@@ -67,6 +67,16 @@ const Contact = () => {
 				minHeight: '100vh',
 			}}>
 			<Grid
+				paddingTop={{
+					xs: '6rem',
+					sm: '6rem',
+					sm: '6rem',
+				}}
+				paddingBottom={{
+					xs: '4rem',
+					sm: '4rem',
+					sm: '4rem',
+				}}
 				container
 				alignItems={'center'}
 				justifyContent={'center'}

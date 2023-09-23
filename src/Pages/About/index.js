@@ -18,9 +18,9 @@ const About = () => {
 					backgroundSize: 1000,
 					backgroundPosition: 'top',
 					backgroundRepeat: 'no-repeat',
-					minHeight: '100vh',
 				}}>
 				<Grid
+					paddingTop={'5rem'}
 					container
 					sx={{
 						backgroundColor: 'rgba(150, 200, 250, 0.5)',

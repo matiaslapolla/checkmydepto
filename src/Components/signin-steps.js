@@ -132,6 +132,14 @@ export const FinalStep = ({ advanceStep }) => {
 						lineHeight={1.5}>
 						Everything is ready!
 					</Typography>
+					<Typography
+						marginTop={1}
+						variant={'body2'}
+						letterSpacing={0.35}
+						textAlign={'center'}
+						lineHeight={1.5}>
+						As this is a demo, you can enter any email and password.
+					</Typography>
 				</Grid>
 				<Grid item>
 					<Button

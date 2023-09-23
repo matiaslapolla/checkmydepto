@@ -35,9 +35,14 @@ const Signin = () => {
 						mt={'8rem'}
 						container
 						flexDirection={{
-							xs: 'column',
-							sm: 'column',
+							xs: 'column-reverse',
+							sm: 'column-reverse',
 							md: 'row',
+						}}
+						gap={{
+							xs: '8rem',
+							sm: '8rem',
+							md: '0rem',
 						}}
 						maxWidth={'1080px'}
 						justifyContent={'space-between'}
