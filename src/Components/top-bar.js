@@ -7,11 +7,6 @@ import { Close, DensityMedium } from '@mui/icons-material';
 export const TopBarComponent = () => {
 	const isMobile = useMediaQuery('(max-width:600px)');
 	const isTablet = useMediaQuery('(max-width:960px)');
-	// const isDesktop = useMediaQuery('(min-width:960px)')
-	// const isLargeDesktop = useMediaQuery('(min-width:1280px)')
-	// const isExtraLargeDesktop = useMediaQuery('(min-width:1920px)')
-	// const is4k = useMediaQuery('(min-width:2560px)')
-	// const is8k = useMediaQuery('(min-width:3840px)')
 
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 

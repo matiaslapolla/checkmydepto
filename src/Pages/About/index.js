@@ -1,6 +1,5 @@
 import { Grid, Typography } from '@mui/material';
 import React from 'react';
-import apartmentSearch from '../../Assets/house_search.png';
 
 const About = () => {
 	console.log('About');
@@ -14,7 +13,6 @@ const About = () => {
 					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
-					backgroundImage: `url(${apartmentSearch})`,
 					backgroundSize: 1000,
 					backgroundPosition: 'top',
 					backgroundRepeat: 'no-repeat',
@@ -23,8 +21,7 @@ const About = () => {
 					paddingTop={'5rem'}
 					container
 					sx={{
-						backgroundColor: 'rgba(150, 200, 250, 0.5)',
-						backdropFilter: 'blur(8px)',
+						backgroundColor: 'rgba(255, 255, 255, 0.5)',
 					}}>
 					<Grid
 						container
@@ -58,6 +55,7 @@ const About = () => {
 									backdropFilter: 'blur(8px)',
 								}}
 								height={'fit-content'}
+								width={'fit-content'}
 								container
 								item
 								p={4}
@@ -82,6 +80,7 @@ const About = () => {
 							</Grid>
 							<Grid
 								height={'fit-content'}
+								width={'fit-content'}
 								sx={{
 									backgroundColor: 'rgba(255, 255, 255, 0.5)',
 									borderRadius: '1rem',
@@ -123,6 +122,7 @@ const About = () => {
 							</Grid>
 							<Grid
 								height={'fit-content'}
+								width={'fit-content'}
 								sx={{
 									backgroundColor: 'rgba(255, 255, 255, 0.5)',
 									borderRadius: '1rem',

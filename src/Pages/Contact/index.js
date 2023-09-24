@@ -1,6 +1,5 @@
 import { Button, Grid, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import getInTouch from '../../Assets/get_in_touch_pana.png';
+import React, { useEffect, useState } from 'react';
 
 const textStyleObject = {
 	'& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
@@ -40,9 +39,11 @@ const Contact = () => {
 		message: '',
 	});
 
+	const [messageSent, setMessageSent] = useState(false);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		alert('Message Sent');
+		setMessageSent(true);
 	};
 
 	const handleChange = (e) => {
@@ -52,51 +53,35 @@ const Contact = () => {
 		});
 	};
 
+	useEffect(() => {
+		setTimeout(() => {
+			setMessageSent(false);
+		}, 3000);
+	}, [messageSent]);
+
 	return (
 		<Grid
 			container
 			direction='column'
 			justifyContent='center'
-			alignItems='center'
-			sx={{
-				backgroundImage: `url(${getInTouch})`,
-				backgroundRepeat: 'no-repeat',
-				backgroundPosition: 'center',
-				backgroundSize: 1000,
-				backgroundBlendMode: 'multiply',
-				minHeight: '100vh',
-			}}>
+			alignItems='center'>
 			<Grid
-				paddingTop={{
-					xs: '6rem',
-					sm: '6rem',
-					sm: '6rem',
-				}}
-				paddingBottom={{
-					xs: '4rem',
-					sm: '4rem',
-					sm: '4rem',
-				}}
+				paddingTop={'6rem'}
+				paddingBottom={'4rem'}
 				container
 				alignItems={'center'}
 				justifyContent={'center'}
 				sx={{
 					maxWidth: '1600px',
-					backdropFilter: 'blur(16px)',
 					minHeight: '100vh',
-					backgroundColor: '#FFFFFF75',
+					backgroundColor: '#FFFFFF99',
 				}}>
 				<Grid
 					container
-					flexDirection={{ xs: 'column', sm: 'row', md: 'row' }}
 					justifyContent={'center'}
 					alignItems={'center'}
-					maxWidth={{
-						xs: '100%',
-						sm: '80%',
-						md: '70%',
-					}}
-					gap='2rem'>
+					gap={2}
+					width={'fit-content'}>
 					<Grid
 						container
 						maxWidth={{
@@ -111,8 +96,13 @@ const Contact = () => {
 							fontSize={'2rem'}
 							fontWeight={'bold'}
 							color={'black'}
+							sx={{
+								'&:hover': {
+									color: 'white',
+								},
+							}}
 							gutterBottom>
-							Greetings from the team at CheckMyDepto!
+							Hey!
 						</Typography>
 						<Typography
 							variant='body2'
@@ -120,23 +110,10 @@ const Contact = () => {
 							sx={{ color: 'black' }}
 							letterSpacing={0.5}
 							gutterBottom>
-							We are here to help and answer any questions you
-							might have. Our team of experts is ready to assist
-							you with any technical inquiries or challenges you
-							may encounter
-						</Typography>
-						<Typography
-							variant='body2'
-							fontSize={'1rem'}
-							sx={{ color: 'black' }}
-							letterSpacing={0.5}
-							gutterBottom>
-							As a business owner, you have the opportunity to
-							showcase your company on our website, gaining
-							exposure to a wide audience of potential customers
-							and partners. Feel free to contact us if you're
-							interested or have any questions. We're eager to
-							hear from you and assist in achieving your goals.
+							We're here to assist with technical questions.
+							Business owners can showcase their company on our
+							website for wider exposure. Contact us for
+							inquiries; we're eager to help you reach your goals.
 						</Typography>
 					</Grid>
 					<Grid
@@ -215,6 +192,23 @@ const Contact = () => {
 								</Grid>
 							</Grid>
 						</form>
+						{messageSent ? (
+							<Grid
+								sx={{
+									marginTop: '2rem',
+									paddingX: '2rem',
+									paddingY: '1rem',
+									backgroundColor: 'green',
+									color: 'white',
+									borderRadius: '2rem',
+								}}>
+								<Typography
+									variant='h6'
+									fontWeight={'bold'}>
+									Thank you for your message!
+								</Typography>
+							</Grid>
+						) : null}
 					</Grid>
 				</Grid>
 			</Grid>
